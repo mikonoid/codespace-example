@@ -1,11 +1,11 @@
 # Use official Node.js image
 FROM node:18-alpine
 
-# Set working directory
-WORKDIR /workspace
+# Install Docker CLI and Docker Compose
+RUN apk add --no-cache docker docker-compose
 
-# Install dependencies
-RUN apk add --no-cache bash
+# Set working directory
+WORKDIR /app
 
 # Set default shell
-CMD [ "bash" ]
+CMD ["sh"]
